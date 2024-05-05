@@ -10,6 +10,7 @@ export const getNews = async () => {
         apiKey: API_KEY,
       },
     });
+    // const news = Array.isArray(response.data.news) ? response.data.news : [];
     return response.data;
   } catch (error) {
     console.log(error);
