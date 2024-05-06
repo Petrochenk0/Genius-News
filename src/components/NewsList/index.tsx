@@ -1,17 +1,20 @@
+import NewsItem from '../NewsItem';
 import styles from './styles.module.css';
 
-type NewsItem = {
+type NewsItemProps = {
   id: number;
   title: string;
+  published: string;
+  author: string;
 };
 
-type NewsListProps = NewsItem[];
+type NewsListProps = NewsItemProps[];
 
 export default function NewsList({ news }: { news: NewsListProps }) {
   return (
     <ul className={styles.list}>
-      {news.map((item: NewsItem) => {
-        return <li key={item.id}>{item.title}</li>;
+      {news.map((item: NewsItemProps) => {
+        return <NewsItem key={item.id} item={item} />;
       })}
     </ul>
   );

@@ -1,0 +1,25 @@
+.item {
+  display: flex;
+  width: 100%;
+  gap: 12px;
+}
+.title {
+  font-size: 14px;
+}
+.extra {
+  font-size: 12px;
+  color: #6c7072;
+}
+.info {
+  display: flex;
+  gap: 8px;
+  flex-direction: column;
+}
+.wrapper {
+  width: 64px;
+  height: 64px;
+  background: #d9dfdf;
+  background-position: center;
+  background-size: cover;
+  flex-shrink: 0;
+}
