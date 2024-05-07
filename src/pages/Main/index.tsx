@@ -8,7 +8,8 @@ import styles from './styles.module.css';
 // functions
 import { getNews } from '../../api/apiNews';
 export default function Main() {
-  const [news, setNews] = React.useState([]);
+  const [news, setNews] = React.useState<[]>([]);
+  const [loading, setLoading] = React.useState<boolean>(false);
   React.useEffect(() => {
     const fetchNews = async () => {
       try {
