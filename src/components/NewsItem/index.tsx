@@ -9,8 +9,6 @@ type NewsItem = {
 };
 
 export default function NewsItem({ item }: { item: NewsItem }) {
-  console.log(item);
-
   return (
     <li className={styles.item}>
       <div className={styles.wrapper} style={{ backgroundImage: `url(${item.image})` }}></div>
