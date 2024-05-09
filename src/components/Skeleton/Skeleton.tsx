@@ -6,8 +6,6 @@ type SkeletonProps = {
 };
 
 export default function Skeleton({ count = 1, type }: SkeletonProps) {
-  console.log(count, type);
-
   return (
     <div>
       {count > 1 ? (
