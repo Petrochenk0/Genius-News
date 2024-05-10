@@ -1,22 +1,43 @@
-// library
-import React from 'react';
-// styles
 import styles from './styles.module.css';
 
 type PaginastionProps = {
-  onePageNews: number;
+  quantityPages: number;
+  pageForward: () => void;
+  pageBack: () => void;
+  pageSelection: (selectionPageArgument: number) => void;
+  currentPage: number;
 };
 
-export default function Pagination({ onePageNews }: PaginastionProps) {
+export default function Pagination({
+  quantityPages,
+  pageForward,
+  pageBack,
+  pageSelection,
+  currentPage,
+}: PaginastionProps) {
   return (
-    <div>
-      <button>{`<`}</button>
-      <div>
-        {[...Array(onePageNews)].map((_, index) => {
-          return <button key={index}>{index + 1}</button>;
+    <div className={styles.pagination}>
+      <button
+        onClick={pageBack}
+        className={styles.arrow}
+        disabled={currentPage === 1}>{`<`}</button>
+      <div className={styles.list}>
+        {[...Array(quantityPages)].map((_, index) => {
+          return (
+            <button
+              onClick={() => pageSelection(index + 1)}
+              className={styles.onePageOfNewsItems}
+              disabled={index + 1 === currentPage}
+              key={index}>
+              {index + 1}
+            </button>
+          );
         })}
       </div>
-      <button>{`>`}</button>
+      <button
+        onClick={pageForward}
+        className={styles.arrow}
+        disabled={currentPage === quantityPages}>{`>`}</button>
     </div>
   );
 }
