@@ -7,17 +7,19 @@
 }
 .onePageOfNewsItems {
   padding: 8px;
+}
+.onePageOfNewsItems,
+.arrow {
   border: none;
   background: white;
   cursor: pointer;
+}
+.onePageOfNewsItems:disabled,
+.arrow:disabled {
+  cursor: default;
 }
 .list {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.arrow {
-  border: none;
-  cursor: pointer;
-  background: white;
 }
