@@ -65,6 +65,13 @@ export default function Main() {
         currentPage={currentPage}
       />
       {loading ? <Skeleton type={'item'} count={10} /> : <NewsList news={news} />}
+      <Pagination
+        quantityPages={quantityPages}
+        pageForward={pageForward}
+        pageBack={pageBack}
+        pageSelection={pageSelection}
+        currentPage={currentPage}
+      />
     </div>
   );
 }
