@@ -3,16 +3,18 @@ import React from 'react';
 // components
 import NewsBanner from '../../components/NewsBanner';
 import NewsList from '../../components/NewsList';
+import Skeleton from '../../components/Skeleton/Skeleton';
+import Pagination from '../../components/Pagination';
 // styles
 import styles from './styles.module.css';
 // functions
-import { getNews } from '../../api/apiNews';
-import Skeleton from '../../components/Skeleton/Skeleton';
-import Pagination from '../../components/Pagination';
+import { getCategories, getNews } from '../../api/apiNews';
+
 export default function Main() {
   const [news, setNews] = React.useState([]);
   const [loading, setLoading] = React.useState<boolean>(false);
   const [currentPage, setCurrentPage] = React.useState(1);
+  const [categories, setCategories] = React.useState<string[]>([]);
 
   const onePageNews = 10;
   const quantityPages = 10;
@@ -27,6 +29,23 @@ export default function Main() {
       console.log(error);
     }
   };
+
+  const fetchCategories = async () => {
+    try {
+      const responseWithCategories = await getCategories();
+      console.log(responseWithCategories);
+
+      setCategories(['All', ...responseWithCategories.categories]);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  console.log(categories);
+
+  React.useEffect(() => {
+    fetchCategories();
+  }, []);
 
   const pageForward = () => {
     if (currentPage < onePageNews) {
