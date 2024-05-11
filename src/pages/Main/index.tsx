@@ -41,8 +41,6 @@ export default function Main() {
     }
   };
 
-  console.log(categories);
-
   React.useEffect(() => {
     fetchCategories();
   }, []);
