@@ -1,0 +1,25 @@
+.pagination {
+  display: flex;
+  width: 100%;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+}
+.onePageOfNewsItems {
+  padding: 8px;
+}
+.onePageOfNewsItems,
+.arrow {
+  border: none;
+  background: white;
+  cursor: pointer;
+}
+.onePageOfNewsItems:disabled,
+.arrow:disabled {
+  cursor: default;
+}
+.list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
