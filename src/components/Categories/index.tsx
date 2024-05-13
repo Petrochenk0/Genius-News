@@ -17,7 +17,14 @@ export default function Categories({
   return (
     <div className={styles.categories}>
       {categories.map((category: string) => {
-        return <button key={category}>{category}</button>;
+        return (
+          <button
+            onClick={() => setSelectedCategory(category)}
+            key={category}
+            className={selectedCategory === category ? styles.active : styles.item}>
+            {category}
+          </button>
+        );
       })}
     </div>
   );
