@@ -21,7 +21,7 @@ export default function Main() {
   const onePageNews = 10;
   const quantityPages = 10;
 
-  const fetchNews = async (page_number: number) => {
+  const fetchNews = async (currentPage: number) => {
     try {
       setLoading(true);
       const responseWithNews = await getNews({

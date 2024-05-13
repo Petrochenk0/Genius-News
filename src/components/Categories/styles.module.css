@@ -1,15 +1,27 @@
-.header {
+.categories {
   display: flex;
   width: 100%;
-  padding: 12px 24px;
-  background: white;
-  border-bottom: 1px solid #f2f4f5;
-  flex-direction: column;
-  gap: 12px;
+  gap: 8px;
+  align-items: flex-start;
+  box-sizing: border-box;
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-width: none;
 }
-.title {
-  font-size: 24px;
+
+.item,
+.active {
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 32px;
+  background-color: #f2f4f5;
 }
-.date {
-  font-size: 16px;
+.active {
+  background: #e7e7ff;
+  color: #6b4eff;
+}
+::-webkit-scrollbar {
+  display: none;
 }
