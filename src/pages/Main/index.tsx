@@ -3,16 +3,20 @@ import React from 'react';
 // components
 import NewsBanner from '../../components/NewsBanner';
 import NewsList from '../../components/NewsList';
+import Skeleton from '../../components/Skeleton/Skeleton';
+import Pagination from '../../components/Pagination';
 // styles
 import styles from './styles.module.css';
 // functions
-import { getNews } from '../../api/apiNews';
-import Skeleton from '../../components/Skeleton/Skeleton';
-import Pagination from '../../components/Pagination';
+import { getCategories, getNews } from '../../api/apiNews';
+import Categories from '../../components/Categories';
+
 export default function Main() {
   const [news, setNews] = React.useState([]);
   const [loading, setLoading] = React.useState<boolean>(false);
   const [currentPage, setCurrentPage] = React.useState(1);
+  const [categories, setCategories] = React.useState<string[]>([]);
+  const [selectedCategory, setSelectedCategory] = React.useState('All');
 
   const onePageNews = 10;
   const quantityPages = 10;
@@ -20,13 +24,30 @@ export default function Main() {
   const fetchNews = async (page_number: number) => {
     try {
       setLoading(true);
-      const responseWithNews = await getNews(page_number, quantityPages);
+      const responseWithNews = await getNews({
+        page_number: currentPage,
+        page_size: quantityPages,
+        category: selectedCategory === 'All' ? '' : selectedCategory,
+      });
       setNews(responseWithNews.news);
       setLoading(false);
     } catch (error) {
       console.log(error);
     }
   };
+
+  const fetchCategories = async () => {
+    try {
+      const responseWithCategories = await getCategories();
+      setCategories(['All', ...responseWithCategories.categories]);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  React.useEffect(() => {
+    fetchCategories();
+  }, []);
 
   const pageForward = () => {
     if (currentPage < onePageNews) {
@@ -48,7 +69,7 @@ export default function Main() {
 
   React.useEffect(() => {
     fetchNews(currentPage);
-  }, [currentPage]);
+  }, [currentPage, selectedCategory]);
 
   return (
     <div className={styles.main}>
@@ -57,6 +78,11 @@ export default function Main() {
       ) : (
         <Skeleton type={'banner'} count={1} />
       )}
+      <Categories
+        categories={categories}
+        setSelectedCategory={setSelectedCategory}
+        selectedCategory={selectedCategory}
+      />
       <Pagination
         quantityPages={quantityPages}
         pageForward={pageForward}
