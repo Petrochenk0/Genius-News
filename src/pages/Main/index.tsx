@@ -17,6 +17,7 @@ export default function Main() {
   const [currentPage, setCurrentPage] = React.useState(1);
   const [categories, setCategories] = React.useState<string[]>([]);
   const [selectedCategory, setSelectedCategory] = React.useState('All');
+  const [keywords, setKeywords] = React.useState('');
 
   const onePageNews = 10;
   const quantityPages = 10;
@@ -28,6 +29,7 @@ export default function Main() {
         page_number: currentPage,
         page_size: quantityPages,
         category: selectedCategory === 'All' ? '' : selectedCategory,
+        keywords: keywords,
       });
       setNews(responseWithNews.news);
       setLoading(false);
