@@ -10,6 +10,7 @@ import styles from './styles.module.css';
 // functions
 import { getCategories, getNews } from '../../api/apiNews';
 import Categories from '../../components/Categories';
+import Search from '../../components/Search';
 
 export default function Main() {
   const [news, setNews] = React.useState([]);
@@ -29,7 +30,7 @@ export default function Main() {
         page_number: currentPage,
         page_size: quantityPages,
         category: selectedCategory === 'All' ? '' : selectedCategory,
-        keywords: keywords,
+        keywords,
       });
       setNews(responseWithNews.news);
       setLoading(false);
@@ -75,16 +76,17 @@ export default function Main() {
 
   return (
     <div className={styles.main}>
-      {news.length > 0 && !loading ? (
-        <NewsBanner item={news[0]} />
-      ) : (
-        <Skeleton type={'banner'} count={1} />
-      )}
       <Categories
         categories={categories}
         setSelectedCategory={setSelectedCategory}
         selectedCategory={selectedCategory}
       />
+      <Search keywords={keywords} setKeywords={setKeywords} />
+      {news.length > 0 && !loading ? (
+        <NewsBanner item={news[0]} />
+      ) : (
+        <Skeleton type={'banner'} count={1} />
+      )}
       <Pagination
         quantityPages={quantityPages}
         pageForward={pageForward}
