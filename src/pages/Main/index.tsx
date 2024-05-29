@@ -11,6 +11,7 @@ import styles from './styles.module.css';
 import { getCategories, getNews } from '../../api/apiNews';
 import Categories from '../../components/Categories';
 import Search from '../../components/Search';
+import { useDebounce } from '../../helpers/hooks/useDebounce';
 
 export default function Main() {
   const [news, setNews] = React.useState([]);
@@ -23,6 +24,8 @@ export default function Main() {
   const onePageNews = 10;
   const quantityPages = 10;
 
+  const totalValueAfterDelay = useDebounce({ value: keywords, delay: 1500 });
+
   const fetchNews = async (currentPage: number) => {
     try {
       setLoading(true);
@@ -30,7 +33,7 @@ export default function Main() {
         page_number: currentPage,
         page_size: quantityPages,
         category: selectedCategory === 'All' ? '' : selectedCategory,
-        keywords,
+        keywords: totalValueAfterDelay,
       });
       setNews(responseWithNews.news);
       setLoading(false);
@@ -72,7 +75,7 @@ export default function Main() {
 
   React.useEffect(() => {
     fetchNews(currentPage);
-  }, [currentPage, selectedCategory]);
+  }, [currentPage, selectedCategory, totalValueAfterDelay]);
 
   return (
     <div className={styles.main}>
