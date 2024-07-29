@@ -5,12 +5,12 @@ import NewsBanner from '../../components/NewsBanner';
 import NewsList from '../../components/NewsList';
 import Skeleton from '../../components/Skeleton/Skeleton';
 import Pagination from '../../components/Pagination';
+import Categories from '../../components/Categories';
+import Search from '../../components/Search';
 // styles
 import styles from './styles.module.css';
 // functions
 import { getCategories, getNews } from '../../api/apiNews';
-import Categories from '../../components/Categories';
-import Search from '../../components/Search';
 import { useDebounce } from '../../helpers/hooks/useDebounce';
 
 export default function Main() {
