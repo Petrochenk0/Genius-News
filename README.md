@@ -1,28 +1,28 @@
 # Genius News 📰💡
 
-**Welcome to Genius News** — the place where **information** meets **genius**! Here, **NEWS** is presented like a true masterpiece of technology and design! Built on **React, TypeScript**, and **SCSS**, making it **insanely fast** and super **stylish**! 🔥
+**Добро пожаловать в Genius News** — место, где **информация** встречается с **гениальностью**! Здесь **НОВОСТИ** представлены как настоящий шедевр технологий и дизайна! Проект построен на **React, TypeScript** и **SCSS**, что делает его **пиздец быстрым** и супер **стильным**! 🔥
 
-## Key Features 💥
+## Основные Фичи 💥
 
-- **📋 News Feed** — News updates in real-time, keeping you **always in the loop**! 🌊
-- **🗂️ Categories** — From politics to memes: choose your niche and stay **in the know**! 🧐
-- **↔️ Pagination** — Scroll like an Insta feed, but here it’s news, not food pics! 😎
-- **🔎 Sleek Interface** — Everything’s clear and simple: **minimal clicks, maximum info**! 👌
+- **📋 Лента новостей** — Новости обновляются моментально, и ты всегда на волне! 🌊
+- **🗂️ Категории** — От политики до мемов: выбери свою нишу и будь в теме! 🧐
+- **↔️ Пагинация** — Листай, как инста-ленты, только тут инфа, а не фотки еды! 😎
+- **🔎 Удобный интерфейс** — Всё чётко и понятно: **минимум кликов — максимум инфы**! 👌
 
-## Technologies Behind the Magic 🚀
+## Технологии в проекте 🚀
 
-- **React**: Rendering everything on the fly! Blink, and the news has already updated! ⚡️
-- **TypeScript**: No bugs or stupid errors in the code — everything’s **strictly typed** and rock-solid! 💪
-- **SCSS**: Visuals that will make your eyes melt! Pure beauty and perfection! 🎨
+- **React**: Рендерим всё на лету! Ты только моргнул, а новости уже обновились! ⚡️
+- **TypeScript**: Никаких багов и ебаных ошибок в коде — всё **строго типизировано** и надёжно! 💪
+- **SCSS**: Визуал, от которого просто глаза текут! Красота, да и только! 🎨
 
-## Upcoming SENIOR-Level Features 🔥
+## Планируемые СЕНЬОРСКИЕ ФИЧИ 🔥
 
-- **🌍 Localization**: News in multiple languages — read in your **mother tongue**, no problem! 🌐
-- **🔥 Popularity Sorting**: Let the most hyped stories float to the top! 🏆
-- **🤖 AI Integration**: Smart AI will show you only the important stuff and throw away all the spam! 🤖⚡️
-- **💬 Comments Section**: Drop your thoughts, stir the discussions, and build a community! 💬🔥
-- **📲 Mobile Version**: Pure usability bliss on mobile — news in your pocket, anytime, anywhere! 📱
+- **🌍 Локализация**: Новости на разных языках — читай на своём, мать его, родном! 🌐
+- **🔥 Сортировка по популярности**: Пусть самые хайповые темы всплывают первыми! 🏆
+- **🤖 Интеграция с ИИ**: Умный ИИ будет показывать тебе только то, что реально важно, и нахуй весь спам! 🤖⚡️
+- **💬 Комментарии**: Оставляй свои мысли, жги в обсуждениях и строй комьюнити! 💬🔥
+- **📲 Мобильная версия**: Чистый кайф от юзабилити на мобилках — новости всегда в кармане! 📱
 
-## Our Motto: **News that make you a genius!** 💡📰
+## Наш девиз: **Новости, которые делают тебя гением!** 💡📰
 
-_Get ready for **Genius News** to become your go-to source of information! This isn't just news — this is the **power of knowledge**!_ 📚💪
+_Готовься к тому, что **Genius News** станет твоим главным источником инфы! Здесь не просто новости — здесь сила знаний!_ 📚💪
