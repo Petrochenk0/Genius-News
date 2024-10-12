@@ -1,6 +1,7 @@
 # Genius News 📰💡
 
-React / TypeScript  / SCSS / React Query <br/>
+React / TypeScript / React Query / SCSS <br/>
+<br/>
 Nest  / PostgreSQL
 ---
 
