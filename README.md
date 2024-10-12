@@ -1,8 +1,9 @@
 # Genius News 📰💡
+
 React / TypeScript / React Query / SCSS <br/>
-<br/>
+
 Nest  / PostgreSQL
-<br/>
+
 ---
 
 ## Оценка сложности и продвинутости фич ⚙️
